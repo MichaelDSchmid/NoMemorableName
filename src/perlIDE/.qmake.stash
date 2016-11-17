@@ -1,0 +1,9 @@
+QMAKE_DEFAULT_INCDIRS = \
+    C:/Perl/site/lib/auto/MinGW/include/c++/3.4.5 \
+    C:/Perl/site/lib/auto/MinGW/include/c++/3.4.5/mingw32 \
+    C:/Perl/site/lib/auto/MinGW/include/c++/3.4.5/backward \
+    C:/Perl/site/lib/auto/MinGW/include \
+    C:/Perl/site/lib/auto/MinGW/lib/gcc/mingw32/3.4.5/include \
+    /mingw/include \
+    /mingw/include \
+    /mingw/include
