@@ -4,9 +4,17 @@
 
 TEMPLATE = app
 TARGET = perlIDE
-INCLUDEPATH += .
+INCLUDEPATH += "C:/Qt/5.7/mingw53_32/include"
+#LIBS += "C:/Qt/5.7/mingw53_32/lib"
 
-# Input
-HEADERS += mainwindow.h
-FORMS += mainwindow.ui
-SOURCES += main.cpp mainwindow.cpp
+QT += widgets
+qtHaveModule(printsupport): QT += printsupport
+
+HEADERS         = mainwindow.h
+SOURCES         = main.cpp \
+                  mainwindow.cpp
+RESOURCES       = dockwidgets.qrc
+
+# install
+#target.path = $$[QT_INSTALL_EXAMPLES]/widgets/mainwindows/dockwidgets
+#INSTALLS += target
