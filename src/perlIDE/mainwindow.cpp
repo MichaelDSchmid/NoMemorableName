@@ -221,11 +221,9 @@ void MainWindow::addParagraph(const QString &paragraph)
 
 void MainWindow::about()
 {
-   QMessageBox::about(this, tr("About Dock Widgets"),
-            tr("The <b>Dock Widgets</b> example demonstrates how to "
-               "use Qt's dock widgets. You can enter your own text, "
-               "click a customer to add a customer name and "
-               "address, and click standard paragraphs to add them."));
+   QMessageBox::about(this, tr("About PerlIDE"),
+            tr("This is one more try to create a usuable <b>IDE</b> for Perl!<br>"
+			   "Right now, I don't have more information."));
 }
 
 void MainWindow::createActions()
