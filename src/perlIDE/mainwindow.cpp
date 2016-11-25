@@ -69,13 +69,13 @@ MainWindow::MainWindow()
 
     setWindowTitle(tr("Dock Widgets"));
 
-    newLetter();
+    newProject();
     setUnifiedTitleAndToolBarOnMac(true);
 }
 //! [1]
 
 //! [2]
-void MainWindow::newLetter()
+void MainWindow::newProject()
 {
     textEdit->clear();
 
@@ -231,13 +231,27 @@ void MainWindow::createActions()
     QMenu *fileMenu = menuBar()->addMenu(tr("&File"));
     QToolBar *fileToolBar = addToolBar(tr("File"));
 
-    const QIcon newIcon = QIcon::fromTheme("document-new", QIcon(":/images/new.png"));
-    QAction *newLetterAct = new QAction(newIcon, tr("&New Letter"), this);
-    newLetterAct->setShortcuts(QKeySequence::New);
-    newLetterAct->setStatusTip(tr("Create a new form letter"));
-    connect(newLetterAct, &QAction::triggered, this, &MainWindow::newLetter);
-    fileMenu->addAction(newLetterAct);
-    fileToolBar->addAction(newLetterAct);
+    const QIcon newIcon = QIcon::fromTheme("document-new", QIcon(":/images/Open_Folder_Icon_32.png"));
+    QAction *newProjectAct = new QAction(newIcon, tr("&New Project"), this);
+    newProjectAct->setShortcuts(QKeySequence::New);
+    newProjectAct->setStatusTip(tr("Create a new form letter"));
+    connect(newProjectAct, &QAction::triggered, this, &MainWindow::newProject);
+    fileMenu->addAction(newProjectAct);
+    fileToolBar->addAction(newProjectAct);
+	
+	fileMenu->addSeparator();
+	
+	// formatMenu = editMenu->addMenu(tr("&Format"));
+    // formatMenu->addAction(boldAct);
+    // formatMenu->addAction(italicAct);
+    // formatMenu->addSeparator()->setText(tr("Alignment"));
+    // formatMenu->addAction(leftAlignAct);
+    // formatMenu->addAction(rightAlignAct);
+    // formatMenu->addAction(justifyAct);
+    // formatMenu->addAction(centerAct);
+    // formatMenu->addSeparator();
+    // formatMenu->addAction(setLineSpacingAct);
+    // formatMenu->addAction(setParagraphSpacingAct);
 
     const QIcon saveIcon = QIcon::fromTheme("document-save", QIcon(":/images/save.png"));
     QAction *saveAct = new QAction(saveIcon, tr("&Save..."), this);

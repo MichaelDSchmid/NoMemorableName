@@ -1,0 +1,1 @@
+qmake -makefile perlIDE.pro

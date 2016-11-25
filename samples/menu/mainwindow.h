@@ -55,9 +55,9 @@
 
 QT_BEGIN_NAMESPACE
 class QAction;
-class QListWidget;
+class QActionGroup;
+class QLabel;
 class QMenu;
-class QTextEdit;
 QT_END_NAMESPACE
 
 //! [0]
@@ -68,26 +68,69 @@ class MainWindow : public QMainWindow
 public:
     MainWindow();
 
+protected:
+#ifndef QT_NO_CONTEXTMENU
+    void contextMenuEvent(QContextMenuEvent *event) Q_DECL_OVERRIDE;
+#endif // QT_NO_CONTEXTMENU
+//! [0]
+
+//! [1]
 private slots:
-    void newProject();
+    void newFile();
+    void open();
     void save();
     void print();
     void undo();
+    void redo();
+    void cut();
+    void copy();
+    void paste();
+    void bold();
+    void italic();
+    void leftAlign();
+    void rightAlign();
+    void justify();
+    void center();
+    void setLineSpacing();
+    void setParagraphSpacing();
     void about();
-    void insertCustomer(const QString &customer);
-    void addParagraph(const QString &paragraph);
+    void aboutQt();
+//! [1]
 
+//! [2]
 private:
     void createActions();
-    void createStatusBar();
-    void createDockWindows();
+    void createMenus();
+//! [2]
 
-    QTextEdit *textEdit;
-    QListWidget *customerList;
-    QListWidget *paragraphsList;
-
-    QMenu *viewMenu;
+//! [3]
+    QMenu *fileMenu;
+    QMenu *editMenu;
+    QMenu *formatMenu;
+    QMenu *helpMenu;
+    QActionGroup *alignmentGroup;
+    QAction *newAct;
+    QAction *openAct;
+    QAction *saveAct;
+    QAction *printAct;
+    QAction *exitAct;
+    QAction *undoAct;
+    QAction *redoAct;
+    QAction *cutAct;
+    QAction *copyAct;
+    QAction *pasteAct;
+    QAction *boldAct;
+    QAction *italicAct;
+    QAction *leftAlignAct;
+    QAction *rightAlignAct;
+    QAction *justifyAct;
+    QAction *centerAct;
+    QAction *setLineSpacingAct;
+    QAction *setParagraphSpacingAct;
+    QAction *aboutAct;
+    QAction *aboutQtAct;
+    QLabel *infoLabel;
 };
-//! [0]
+//! [3]
 
 #endif

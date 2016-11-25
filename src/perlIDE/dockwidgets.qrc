@@ -4,5 +4,6 @@
     <file>images/print.png</file>
     <file>images/save.png</file>
     <file>images/undo.png</file>
+	<file>images/Open_Folder_Icon_32.png</file>
 </qresource>
 </RCC>
